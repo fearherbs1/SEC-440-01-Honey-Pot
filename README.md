@@ -12,3 +12,21 @@ When it is time to put the Active Directory honeypot on the network, the instruc
 1. Build the honeypot application and create a Windows Active Domain.  
 2. Monitor the honeypot and watch threat actors behavior  
 3. Write a report on at least two sets of unique threat actors that comprise the network and their activity, the tools they used, etc.  
+
+
+# Required VMs:
+
+## 1x Windows Server 2019 (Domain Controller)    
+* 4vCPU     
+* 16GB Ram  
+* 120GB Storage  
+
+## 1x Windows 10 (Client)  
+* 4vCPU   
+* 8GB Ram  
+* 60GB  
+
+## 1x Ubuntu Server 20.04 LTS (Miscellaneous Linux Server)    
+* 4vCPU     
+* 4GB Ram   
+* 120GB Disk Space    
