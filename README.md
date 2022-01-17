@@ -1,7 +1,7 @@
 # SEC-440-01-Honey-Pot
 
 # Prompt:
-##Honeypot setup
+## Honeypot setup
 
 ### Purpose: Deploy an Active Directory based honeypot and monitor threat actors compromising the network.
 
