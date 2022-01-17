@@ -26,7 +26,7 @@ When it is time to put the Active Directory honeypot on the network, the instruc
 * 8GB Ram  
 * 60GB  
 
-## 1x Ubuntu Server 20.04 LTS (Miscellaneous Linux Server)    
+## 1x Ubuntu Server 20.04 LTS (Logging Linux Server)    
 * 4vCPU     
 * 16GB Ram   
 * 240GB Disk Space    
