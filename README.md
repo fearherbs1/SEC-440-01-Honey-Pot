@@ -11,6 +11,6 @@ When it is time to put the Active Directory honeypot on the network, the instruc
 
 ### Deliverables:  
 
-Build the honeypot application and create a Windows Active Domain.
-Monitor the honeypot and watch threat actors behavior
-Write a report on at least two sets of unique threat actors that comprise the network and their activity, the tools they used, etc.
+1. Build the honeypot application and create a Windows Active Domain.  
+2. Monitor the honeypot and watch threat actors behavior  
+3. Write a report on at least two sets of unique threat actors that comprise the network and their activity, the tools they used, etc.  
