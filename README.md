@@ -1,5 +1,3 @@
-# SEC-440-01-Honey-Pot
-
 # Prompt:
 ## Honeypot setup
 
