@@ -28,12 +28,19 @@ This is good to set up first to allow your clients to have network access:
 5.) Set up an admin and user account with weak passwords.  
 6.) Install windows ISS server and make sure it is running.  
 7.) Set a wallpaper that fits your domains name.    
+8.) Set a Static IP.  
 
 
 ### Windows Domain Client
-1.) Install Windows 10.
-2.) Set a weak local Admin password.
-3.) change computer name to fit the theme.
-4.) Join the domain you created on the Domain Controller.
-5.) Log into the Domain Client with the user you created in Active Directory.
+1.) Install Windows 10.  
+2.) Set a weak local Admin password.  
+3.) change computer name to fit the theme.  
+4.) Join the domain you created on the Domain Controller.  
+5.) Log into the Domain Client with the user you created in Active Directory.  
 
+
+### Log Server:
+1.) Install Ubuntu Server  
+2.) Set up a secure user, we do not want any attackers to easily be able to access this box!  
+3.) Set up a static IP.  
+4.) Fully update the Server.  
