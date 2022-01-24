@@ -9,6 +9,7 @@ For this honeypot we will have 4 diffrent servers/clients:
 * 1 pfSense Router (FreeBSD)
 * 1 Ubuntu Log Server (Ubuntu Server 20 LTS)
 
+For This guide we will be using VMs hosted on vCenter, but any other virtualization platform will work fine. 
 
 ## Setup of each device
 Below is a summery/checklist of what to set up on each device
