@@ -231,3 +231,9 @@ Note: if the service does not start you can run winlogbeat manualy from the comm
   
 ![](https://i.imgur.com/ZPickro.png)  
 
+
+
+
+### Setup Elastic Security
+
+(todo)  
