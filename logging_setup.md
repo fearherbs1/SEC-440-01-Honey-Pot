@@ -69,4 +69,152 @@ Now that our stack is secure we begin sending logs to it from our windows client
 
 ### Sysmon setup
 1.) Download the latest sysmon from [HERE](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon) and extract its contents to `C:\Program Files\sysmon`  
+  
 2.) Download the SwiftOnSecurity Sysmon Config File from [HERE](https://github.com/SwiftOnSecurity/sysmon-config) rename it to `sysmonconfig.xml` and place it in the same folder.  
+
+3.) Then open a admin powershell in that folder and run the following to install sysmon:  
+`sysmon64.exe -accepteula -i sysmonconfig.xml`  
+
+
+### Winlogbeat Setup
+1.) First you must create the winlogbeat setup & writer users in elastic as seen [HERE](https://www.elastic.co/guide/en/elasticsearch/reference/7.16/security-basic-setup-https.html#configure-beats-security)  
+
+2.) Download the latest version of winlogbeat [HERE](https://www.elastic.co/downloads/beats/winlogbeat) and extract its contents to `C:\ProgramData\winlogbeat`
+
+3.) Create a new folder within the winlogbeat folder named `ssl` and place your `elasticsearch-ca.pem` file that you created while setting up elastic security inside of it.  
+
+4.) Edit the following config options within `winlogbeat.yml` : **Use the setup user for this step!!**
+```
+setup.template.settings:
+  index.number_of_shards: 1
+  setup.template.enabled: true
+
+
+output.elasticsearch:
+  # Array of hosts to connect to.
+  hosts: ["192.168.1.100:9200"]
+
+  # Protocol - either `http` (default) or `https`.
+  protocol: "https"
+
+  # Authentication credentials - either API key or username/password.
+  username: "winlogbeat_setup"
+  password: "Password-here"
+  
+  ssl:
+    certificate_authorities: ["C:\\Program Files\\winlogbeat\\ssl\\elasticsearch-ca.pem"]
+    verification_mode: "Certificate"
+
+```
+5.) Then open a administrator level powershell in the winlogbeat directory and run the following:  
+`.\winlogbeat.exe setup -e`  
+This will load the index templates & set up the winlogbeat index.  
+**This only has to be done ONCE! you can set up all other instances of winlogbeat with just the writer account as seen below in the nex section**
+
+6.) Next we need to setup the keystore.  
+First create the keystore:
+`.\winlogbeat.exe keystore create`  
+
+7.) Then we need to add our writer account's password to it:  
+`.\winlogbeat.exe keystore add ES_PWD`  
+Then type in the password of the writer account
+
+8.) Once the keystore is created, copy the keystore file (located in `winlogbeat\data\winlogbeat.keystore`) to the following locations:  
+`C:\ProgramData\winlogbeat\`  
+  
+`C:\ProgramData\winlogbeat\data\`  
+
+9.) Then edit your config to be the following:
+```
+
+# ======================== Winlogbeat specific options =========================
+
+winlogbeat.event_logs:
+  - name: Application
+    ignore_older: 72h
+
+  - name: System
+
+  - name: Security
+    processors:
+      - script:
+          lang: javascript
+          id: security
+          file: ${path.home}/module/security/config/winlogbeat-security.js
+
+  - name: Microsoft-Windows-Sysmon/Operational
+    processors:
+      - script:
+          lang: javascript
+          id: sysmon
+          file: ${path.home}/module/sysmon/config/winlogbeat-sysmon.js
+
+  - name: Windows PowerShell
+    event_id: 400, 403, 600, 800
+    processors:
+      - script:
+          lang: javascript
+          id: powershell
+          file: ${path.home}/module/powershell/config/winlogbeat-powershell.js
+
+  - name: Microsoft-Windows-PowerShell/Operational
+    event_id: 4103, 4104, 4105, 4106
+    processors:
+      - script:
+          lang: javascript
+          id: powershell
+          file: ${path.home}/module/powershell/config/winlogbeat-powershell.js
+
+  - name: ForwardedEvents
+    tags: [forwarded]
+    processors:
+      - script:
+          when.equals.winlog.channel: Security
+          lang: javascript
+          id: security
+          file: ${path.home}/module/security/config/winlogbeat-security.js
+      - script:
+          when.equals.winlog.channel: Microsoft-Windows-Sysmon/Operational
+          lang: javascript
+          id: sysmon
+          file: ${path.home}/module/sysmon/config/winlogbeat-sysmon.js
+      - script:
+          when.equals.winlog.channel: Windows PowerShell
+          lang: javascript
+          id: powershell
+          file: ${path.home}/module/powershell/config/winlogbeat-powershell.js
+      - script:
+          when.equals.winlog.channel: Microsoft-Windows-PowerShell/Operational
+          lang: javascript
+          id: powershell
+          file: ${path.home}/module/powershell/config/winlogbeat-powershell.js
+  - name: Microsoft-Windows-Sysmon/Operational
+    processors:
+      - script:
+          lang: javascript
+          id: sysmon
+          file: ${path.home}/module/sysmon/config/winlogbeat-sysmon.js
+
+setup.template.settings:
+  index.number_of_shards: 1
+  setup.template.enabled: false
+
+
+# ================================== Outputs ===================================
+
+# ---------------------------- Elasticsearch Output ----------------------------
+output.elasticsearch:
+  hosts: ["192.168.1.100:9200"] # log server IP
+  protocol: "https"
+  username: "winlogbeat" # username of your winlogbeat writer user
+  password: "${ES_PWD}"
+  
+  ssl:
+    certificate_authorities: ["C:\\Program Files\\winlogbeat\\ssl\\elasticsearch-ca.pem"]
+    verification_mode: "Certificate"
+# ================================= Processors =================================
+processors:
+  - add_host_metadata:
+      when.not.contains.tags: forwarded
+  - add_cloud_metadata: ~
+```
