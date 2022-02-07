@@ -218,3 +218,16 @@ processors:
       when.not.contains.tags: forwarded
   - add_cloud_metadata: ~
 ```
+
+
+10.) Now using an admin powershell run the `install-service-winlogbeat.ps1` powershell script to install the winlogbeat service.
+
+
+11.) Start the service `net start winlogbeat`    
+Note: if the service does not start you can run winlogbeat manualy from the commandline with `.\winlogbeat.exe -e` to see error output.  
+
+
+12.) If all is well you should be able to see logs flowing into the winlogbeat index on kibana!:
+  
+![](https://i.imgur.com/ZPickro.png)  
+
