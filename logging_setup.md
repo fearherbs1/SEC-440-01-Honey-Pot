@@ -61,3 +61,12 @@ In order to use the security features with elastic, elastic minimal security and
 ### First: [Minimal Security](https://www.elastic.co/guide/en/elasticsearch/reference/7.16/security-minimal-setup.html)
 
 ### Second: [Basic Security](https://www.elastic.co/guide/en/elasticsearch/reference/7.16/security-basic-setup-https.html)
+
+
+
+## Sending logs to our stack
+Now that our stack is secure we begin sending logs to it from our windows clients. We will be using both winlogbeat and sysmon to do this.
+
+### Sysmon setup
+1.) Download the latest sysmon from [HERE](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon) and extract its contents to `C:\Program Files\sysmon`  
+2.) Download the SwiftOnSecurity Sysmon Config File from [HERE](https://github.com/SwiftOnSecurity/sysmon-config) rename it to `sysmonconfig.xml` and place it in the same folder.  
