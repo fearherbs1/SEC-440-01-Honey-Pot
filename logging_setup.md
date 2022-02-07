@@ -8,7 +8,11 @@ This process is fully coverd in the guide [HERE](https://medium.com/devops-dudes
 
 1.) Setup Repo & Install Packages:  
 `https://medium.com/devops-dudes/how-to-deploy-elasticsearch-5b1105e3063a`  
+  
 `sudo apt-get install apt-transport-https -y`  
+  
 `echo “deb https://artifacts.elastic.co/packages/7.x/apt stable main” | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list`  
+  
 `sudo apt-get update`  
+  
 `sudo apt-get install elasticsearch && sudo apt-get install kibana`  
