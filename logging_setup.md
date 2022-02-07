@@ -84,7 +84,7 @@ Now that our stack is secure we begin sending logs to it from our windows client
 3.) Create a new folder within the winlogbeat folder named `ssl` and place your `elasticsearch-ca.pem` file that you created while setting up elastic security inside of it.  
 
 4.) Edit the following config options within `winlogbeat.yml` : **Use the setup user for this step!!**
-```
+```yaml
 setup.template.settings:
   index.number_of_shards: 1
   setup.template.enabled: true
@@ -125,7 +125,7 @@ Then type in the password of the writer account
 `C:\ProgramData\winlogbeat\data\`  
 
 9.) Then edit your config to be the following:
-```
+```yaml
 
 # ======================== Winlogbeat specific options =========================
 
