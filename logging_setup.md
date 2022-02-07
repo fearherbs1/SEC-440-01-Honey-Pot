@@ -6,7 +6,7 @@ Now in order to catch the activity that attackers are doing on our honey-pot we 
 First, you need to create a very simple single node elastic stack on your log server.   
 This process is fully coverd in the guide [HERE](https://medium.com/devops-dudes/how-to-deploy-elasticsearch-5b1105e3063a) But here are the basic settup commands:
 
-1.) Setup Repo & Install Packages:
+1.) Setup Repo & Install Packages:  
 `https://medium.com/devops-dudes/how-to-deploy-elasticsearch-5b1105e3063a`  
 `sudo apt-get install apt-transport-https -y`  
 `echo “deb https://artifacts.elastic.co/packages/7.x/apt stable main” | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list`  
