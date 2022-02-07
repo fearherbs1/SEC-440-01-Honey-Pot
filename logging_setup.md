@@ -234,6 +234,15 @@ Note: if the service does not start you can run winlogbeat manualy from the comm
 
 
 
-### Setup Elastic Security
+## Setup Elastic Security
+
+### Kibana Encryption key
+
+Before we can create detections we first need a kibana encryption key. Set the following in your `kibana.yml` and then restart kibana:  
+
+```yaml
+xpack.security.encryptionKey: "something_at_least_32_characters"
+```
+
 
 (todo)  
