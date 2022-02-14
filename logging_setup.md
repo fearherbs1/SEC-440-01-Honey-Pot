@@ -244,5 +244,12 @@ Before we can create detections we first need a kibana encryption key. Set the f
 xpack.security.encryptionKey: "something_at_least_32_characters"
 ```
 
+### Elastic Siem / Elastic Security:
+
+First open the sidebar and click (add intigrations):  
+
+![](https://imgur.com/a/bml7xDS)
+
+  
 
 (todo)  
