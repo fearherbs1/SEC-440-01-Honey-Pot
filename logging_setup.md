@@ -269,3 +269,28 @@ Search for all rules with the windows tag, bulk select them and enable them.
 
 Now all your rules should be enabled and you can see their individual status codes once they run:  
 ![](https://i.imgur.com/GWeoYwp.png)
+
+
+
+### Test Rule
+To easily test that our logging stack is working, lets make a rule that is easy to set off.  
+To do this click the `create new rule` button in the upper right.
+
+
+This rule will fire when a system level user runs the `whomai` command:
+```
+Rule type: Custom Query
+Index pattern: winlogbeat-*
+Query: process.name : "whoami.exe" AND user.name : "SYSTEM" AND process.command_line : "whoami" AND event.type : "process_start" 
+
+Name: Whoami from system user
+Severity: Medium
+Description: Fires when a system level user runs `whoami`
+
+Runs every: 5 min
+Lookback time: 1 min
+
+Rule actions: None
+
+```
+
