@@ -294,3 +294,10 @@ Rule actions: None
 
 ```
 
+Now use a tool such as psexec to reach system level and run a whoami:
+
+![](https://i.imgur.com/i1zZaQi.png)
+
+After the rule runs you should see the detection within the dashboard:  
+
+![](https://i.imgur.com/2ZF5x4f.png)
