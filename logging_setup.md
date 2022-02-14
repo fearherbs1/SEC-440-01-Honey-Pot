@@ -266,3 +266,6 @@ Search for all rules with the windows tag, bulk select them and enable them.
   
 ![](https://i.imgur.com/AFQRNv7.png)  
 
+
+Now all your rules should be enabled and you can see their individual status codes once they run:  
+![](https://i.imgur.com/GWeoYwp.png)
