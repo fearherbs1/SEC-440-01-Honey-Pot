@@ -301,3 +301,18 @@ Now use a tool such as psexec to reach system level and run a whoami:
 After the rule runs you should see the detection within the dashboard:  
 
 ![](https://i.imgur.com/2ZF5x4f.png)
+
+From there you can now investigate the activity using elasitcs built in tools!
+Here are a few examples of what you can do:
+
+
+#### Event analyzer:
+![](https://i.imgur.com/9NbR4pr.png)
+
+#### Timeline Building:
+![](https://i.imgur.com/TF4Qh2A.png)
+
+#### Cases:
+
+![](https://i.imgur.com/ixw6mkv.png)
+
