@@ -245,11 +245,12 @@ xpack.security.encryptionKey: "something_at_least_32_characters"
 ```
 
 ### Elastic Siem / Elastic Security:
+You should have a security section within your elasic stack menu now:  
+![](https://i.imgur.com/Wz1CALS.png)  
 
-First open the sidebar and click (add intigrations):  
+And once your click on `overview` it it should look something like this:  
+![](https://i.imgur.com/Ft5WOR5.png)    
 
-![](https://imgur.com/a/bml7xDS)
 
-  
 
-(todo)  
+
