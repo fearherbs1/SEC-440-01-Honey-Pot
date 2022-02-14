@@ -253,4 +253,10 @@ And once your click on `overview` it it should look something like this:
 
 
 
+Now we need to load our rules so we can detect malicious activity:
+
+You should see a similar button to load the prebuilt elastic rules, click it:  
+![](https://i.imgur.com/9apNKi4.png) 
+
+
 
