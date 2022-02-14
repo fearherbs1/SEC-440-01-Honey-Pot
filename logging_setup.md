@@ -258,5 +258,11 @@ Now we need to load our rules so we can detect malicious activity:
 You should see a similar button to load the prebuilt elastic rules, click it:  
 ![](https://i.imgur.com/9apNKi4.png) 
 
+After all of the rules are loaded we now need to enable them. For this project we are going to just enable the windows ones.  
+Search for all rules with the windows tag, bulk select them and enable them.  
 
+![](https://i.imgur.com/cDjUDfm.png) 
+
+  
+![](https://i.imgur.com/AFQRNv7.png)  
 
