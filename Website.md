@@ -7,6 +7,3 @@ You can easily find tons of templates, by googling around.
 Here is a screenshot of how it came out:
 
 ![](https://i.imgur.com/baUKR7p.png)
-
-
-https://www.fakenamegenerator.com/pickup.php?order=d0b0bbba&utm_source=bulkorder&utm_medium=email&utm_campaign=bulkorder
