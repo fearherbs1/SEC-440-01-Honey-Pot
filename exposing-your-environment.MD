@@ -17,3 +17,7 @@ remoteuser:remoteuser
 superadmin:superadmin
 cathouse:cathouse
 ```
+## Snapshots!
+BEFORE EXPOSING YOUR  ENVIORMNENT TO THE INTERNET BE SURE TO TAKE SNAPSHOTS!
+
+There is a good chance these enviorments will get destroyed by attackers and you will want a nice easy way to restore them.
