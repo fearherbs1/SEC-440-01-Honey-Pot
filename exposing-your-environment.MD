@@ -8,4 +8,12 @@ The main attack vector that we are going to open is rdp / remote deskop with a v
 The key here is to set up a few accounts with rdp permissions and very bad passwords.
 There is an awesome resource of commenly seen bad rdp passwords [HERE](https://krebsonsecurity.com/2013/12/hacked-via-rdp-really-dumb-passwords/).
 
-Port 3389
+For example I decided to set up the following ad accounts that have domain admin permission and can remote in:  
+The Format is: `usrname`:`password`  
+```
+remote:remote
+guest:guest
+scanner:scanner
+remoteuser:remoteuser
+superadmin:superadmin
+```
