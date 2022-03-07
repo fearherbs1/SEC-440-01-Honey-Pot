@@ -16,4 +16,5 @@ guest:guest
 scanner:scanner
 remoteuser:remoteuser
 superadmin:superadmin
+cathouse:cathouse
 ```
