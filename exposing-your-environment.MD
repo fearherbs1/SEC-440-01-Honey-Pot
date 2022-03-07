@@ -6,7 +6,7 @@ Now that our honey pot is all set up we can expose it to the internet and allow 
 The main attack vector that we are going to open is rdp / remote deskop with a very weak password. This will allow the thousands of scanners to pickup on our vunrable enviourment. 
 
 The key here is to set up a few accounts with rdp permissions and very bad passwords.
-There is an awesome resource of commenly seen bad rdp passwords [HERE](https://krebsonsecurity.com/2013/12/hacked-via-rdp-really-dumb-passwords/).
+There is an awesome resource of commenly seen bad rdp passwords [HERE](https://krebsonsecurity.com/2013/12/hacked-via-rdp-really-dumb-passwords/). By Krebs and a full raw list of all the names is available on the repo [HERE](https://github.com/fearherbs1/SEC-440-01-Honey-Pot/blob/main/weak-rdp.txt)
 
 For example I decided to set up the following ad accounts that have domain admin permission and can remote in:  
 The Format is: `usrname`:`password`  
