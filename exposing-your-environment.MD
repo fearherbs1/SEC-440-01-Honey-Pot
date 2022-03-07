@@ -12,7 +12,6 @@ For example I decided to set up the following ad accounts that have domain admin
 The Format is: `usrname`:`password`  
 ```
 remote:remote
-guest:guest
 scanner:scanner
 remoteuser:remoteuser
 superadmin:superadmin
