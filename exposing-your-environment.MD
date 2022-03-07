@@ -21,3 +21,16 @@ cathouse:cathouse
 BEFORE EXPOSING YOUR  ENVIORMNENT TO THE INTERNET BE SURE TO TAKE SNAPSHOTS!
 
 There is a good chance these enviorments will get destroyed by attackers and you will want a nice easy way to restore them.
+
+## Port Forwarding
+
+In our case we will be using ZeroTier and a VPS in order to forward our enviorments to the internet, but in essence all you need to do is forward web and rdp ports to your domain controller: 
+
+For example if my domain controller ip is 192.168.1.101 I would use the following port forwards:
+
+RDP: `WAN:3389 ----> 192.168.1.101:3389`  
+HTTP: `WAN:80   ----> 192.168.1.101:80`  
+
+
+This will allow your honeypot to be reachabe by anyone on the internet!  
+
